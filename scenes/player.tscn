@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cijfjvh1uoxg2" path="res://sprites/player_1/manBlue_stand.png" id="2_ikx1f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8aqc"]
-radius = 33.0
+radius = 20.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ag4c3"]
 animations = [{
