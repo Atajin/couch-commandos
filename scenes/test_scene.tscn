@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dakrktvn5l6dj"]
+
+[ext_resource type="PackedScene" uid="uid://da4r6lfm4325" path="res://scenes/player.tscn" id="1_tutdv"]
+[ext_resource type="PackedScene" uid="uid://hidfb1pp12xh" path="res://scenes/bullet_pool.tscn" id="2_ie7wy"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_tutdv")]
+
+[node name="BulletPool" parent="." instance=ExtResource("2_ie7wy")]
