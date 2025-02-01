@@ -26,7 +26,7 @@ offset_right = 881.0
 offset_bottom = 546.0
 alignment = 1
 
-[node name="Start_Game" type="Button" parent="VBoxContainer"]
+[node name="StartGame" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 60
@@ -45,6 +45,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 60
 text = "Quit"
 
-[connection signal="button_down" from="VBoxContainer/Start_Game" to="." method="_on_start_game_button_down"]
+[connection signal="button_down" from="VBoxContainer/StartGame" to="." method="_on_start_game_button_down"]
 [connection signal="button_down" from="VBoxContainer/Option" to="." method="_on_option_button_down"]
 [connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_quit_button_down"]

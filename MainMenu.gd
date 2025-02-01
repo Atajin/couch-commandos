@@ -11,12 +11,11 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_start_game_button_down():
-	print("zizi") # Replace with function body.
-
+	get_tree().change_scene_to_file("res://ui_health.tscn")
 
 func _on_option_button_down():
-	print("FENT")
+	print("options opened")
 
 
 func _on_quit_button_down():
-	print("Diddy")
+	get_tree().quit()
