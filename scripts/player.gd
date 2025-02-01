@@ -6,7 +6,7 @@ const DEADZONE = 0.2
 
 @export var is_player_1: bool = true
 
-@onready var aim_pivot = $AimPivot
+@onready var aim_pivot = $Pivot
 
 func _physics_process(delta: float) -> void:
 	var input_vector = get_input_vector()
