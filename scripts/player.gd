@@ -6,11 +6,14 @@ const DEADZONE = 0.2
 
 @export var is_player_1: bool = true
 
+@onready var aim_pivot = $AimPivot
+
 func _physics_process(delta: float) -> void:
 	var input_vector = get_input_vector()
 	
 	if input_vector.length() > 0:
 		velocity = input_vector * SPEED
+		aim_pivot.rotation = input_vector.angle()
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 

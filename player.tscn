@@ -34,5 +34,6 @@ shape = SubResource("CircleShape2D_o8aqc")
 [node name="AimPivot" type="Node2D" parent="."]
 
 [node name="TempWeapon" type="MeshInstance2D" parent="AimPivot"]
-position = Vector2(0, 35)
+position = Vector2(35, 0)
+rotation = -1.5708
 mesh = SubResource("PrismMesh_heylq")
