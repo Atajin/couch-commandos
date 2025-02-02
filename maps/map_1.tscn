@@ -4459,7 +4459,9 @@ is_player_1 = false
 [node name="BulletPool" parent="." instance=ExtResource("4_fh72r")]
 
 [node name="PlayerSpawn1" type="Marker2D" parent="."]
+position = Vector2(183, 129)
 
 [node name="PlayerSpawn2" type="Marker2D" parent="."]
+position = Vector2(1465, 169)
 
 [node name="HUD" parent="." instance=ExtResource("5_nixxi")]
