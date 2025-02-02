@@ -6,6 +6,8 @@ extends CharacterBody2D
 const SPEED = 200.0
 const DEADZONE = 0.2
 
+@export var player1_spriteframes: SpriteFrames
+@export var player2_spriteframes: SpriteFrames
 @export var is_player_1: bool = true
 
 @onready var aim_pivot = $Pivot
@@ -13,6 +15,12 @@ const DEADZONE = 0.2
 @onready var bullet_pool = $"../BulletPool"
 
 var is_reloading: bool = false
+
+func _ready() -> void:
+	if is_player_1:
+		$Pivot/PlayerSprite.sprite_frames = player1_spriteframes
+	else:
+		$Pivot/PlayerSprite.sprite_frames = player2_spriteframes
 
 func _process(delta: float) -> void:
 	if is_player_1:
