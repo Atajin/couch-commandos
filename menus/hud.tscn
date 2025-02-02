@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ll8w686waxfu"]
+[gd_scene load_steps=4 format=3 uid="uid://ll8w686waxfu"]
 
 [ext_resource type="Texture2D" uid="uid://b1crusyigmk57" path="res://sprites/bullets/bullet_counter_image.png" id="1_32tqc"]
-[ext_resource type="PackedScene" uid="uid://dbv55xpjca5ex" path="res://maps/map_1.tscn" id="1_lb80b"]
 [ext_resource type="Texture2D" uid="uid://cx2mytocwmuud" path="res://sprites/bullets/bullet_counter_image_reverse.png" id="2_64o7r"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="4_4hx82"]
 
@@ -10,14 +9,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 62.0
-offset_top = -29.0
-offset_right = 62.0
-offset_bottom = -29.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Node2D" parent="." instance=ExtResource("1_lb80b")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -78,28 +73,28 @@ script = ExtResource("4_4hx82")
 
 [node name="PlayerName1" type="Label" parent="."]
 layout_mode = 0
-offset_left = 50.0
+offset_left = 55.0
 offset_top = 16.0
-offset_right = 135.0
-offset_bottom = 47.0
+offset_right = 147.0
+offset_bottom = 50.0
 theme_override_font_sizes/font_size = 24
 text = "Player 1"
 
 [node name="PlayerName2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1457.0
+offset_left = 1452.0
 offset_top = 15.0
-offset_right = 1549.0
+offset_right = 1544.0
 offset_bottom = 49.0
 theme_override_font_sizes/font_size = 24
 text = "Player 2"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 793.0
-offset_top = 9.0
-offset_right = 955.0
-offset_bottom = 49.0
+offset_left = 727.0
+offset_top = 8.0
+offset_right = 889.0
+offset_bottom = 48.0
 
 [node name="Round" type="Label" parent="HBoxContainer3"]
 layout_mode = 2
