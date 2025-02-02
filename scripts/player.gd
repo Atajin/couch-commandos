@@ -7,6 +7,12 @@ const DEADZONE = 0.2
 @export var is_player_1: bool = true
 
 @onready var aim_pivot = $Pivot
+@onready var barrel_tip = $Pivot/BarrelTip
+@onready var bullet_pool = $"../BulletPool"
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("shoot_p1"):
+		shoot()
 
 func _physics_process(delta: float) -> void:
 	var input_vector = get_input_vector()
@@ -50,3 +56,12 @@ func get_input_vector() -> Vector2:
 			return controller_input.normalized()
 	
 	return Vector2.ZERO
+	
+	
+func shoot() -> void:
+	var bullet = bullet_pool.get_bullet()
+	print(bullet)
+	if bullet:
+		bullet.reset()
+		bullet.global_position = barrel_tip.global_position
+		bullet.rotation = barrel_tip.global_rotation

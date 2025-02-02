@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ypt0xyk03a8"
-path="res://.godot/imported/manBlue_reload.png-3609eee4f312f4736df75db1fa8a7f51.ctex"
+uid="uid://be81wyiux8abd"
+path="res://.godot/imported/bullet_frame_1.png-d73c515018435fd43205b02dd6f05b0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player_1/manBlue_reload.png"
-dest_files=["res://.godot/imported/manBlue_reload.png-3609eee4f312f4736df75db1fa8a7f51.ctex"]
+source_file="res://sprites/bullets/bullet_frame_1.png"
+dest_files=["res://.godot/imported/bullet_frame_1.png-d73c515018435fd43205b02dd6f05b0b.ctex"]
 
 [params]
 
