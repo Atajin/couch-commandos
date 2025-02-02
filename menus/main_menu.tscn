@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlkjjchywe0uu"]
+[gd_scene load_steps=3 format=3 uid="uid://dlkjjchywe0uu"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pr66l"]
+[ext_resource type="FontFile" uid="uid://ckfd322enrcy6" path="res://fonts/BlackOpsOne-Regular.ttf" id="2_2p17y"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,14 +10,14 @@ scale = Vector2(1.45, 1.45)
 script = ExtResource("1_pr66l")
 
 [node name="Titre" type="Label" parent="."]
-layout_mode = 0
-offset_left = 346.0
-offset_top = 6.0
-offset_right = 767.0
-offset_bottom = 89.0
+layout_mode = 2
+offset_left = 225.0
+offset_top = 70.0
+offset_right = 881.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("2_2p17y")
 theme_override_font_sizes/font_size = 60
-text = "Versus
-"
+text = "Couch Commandos"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -30,24 +31,28 @@ alignment = 1
 [node name="StartGame" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_2p17y")
 theme_override_font_sizes/font_size = 60
 text = "Play map 1"
 
 [node name="StartGame2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_2p17y")
 theme_override_font_sizes/font_size = 60
 text = "Play map 2"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_2p17y")
 theme_override_font_sizes/font_size = 60
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_2p17y")
 theme_override_font_sizes/font_size = 60
 text = "Quit"
 
