@@ -9,6 +9,7 @@ const MAX_PISTOL_AMMO: int = 9
 const MAX_ROUNDS: int = 5
 
 var hud: Node = null
+var current_map: String = ""
 var current_round: int = 1
 var player1_score: int = 0
 var player2_score: int = 0

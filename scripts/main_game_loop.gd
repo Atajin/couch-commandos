@@ -18,7 +18,10 @@ func reset() -> void:
 	if globals.current_round > globals.MAX_ROUNDS:
 		finish_game()
 	else:
-		$HUD/HBoxContainer3/Round.text = "Round: " + str(globals.current_round)
+		if (globals.current_round != globals.MAX_ROUNDS):
+			$HUD/HBoxContainer3/Round.text = "Round: " + str(globals.current_round)
+		else:
+			$HUD/HBoxContainer3/Round.text = "Final Round"
 		$Breakable.respawn_breakables()
 		$Player1.position = $PlayerSpawn1.position
 		$Player2.position = $PlayerSpawn2.position
@@ -29,15 +32,15 @@ func reset() -> void:
 		$RoundTimer.start()
 
 func finish_game() -> void:
-	pass
+	get_tree().change_scene_to_file("res://menus/game_over.tscn")
 
 
 func _on_health_changed(new_value: int, is_player_one: bool) -> void:
 	if new_value != 0: return
 	if !is_player_one:
 		globals.player1_score += 1
-		$HUD/HBoxContainer4/PlayerName1.text = "Player 1 %s" % ["I".repeat(globals.player1_score)]
+		$HUD/HBoxContainer4/PlayerName1.text = "Player 1     %s" % ["I".repeat(globals.player1_score)]
 	else:
 		globals.player2_score += 1
-		$HUD/HBoxContainer4/PlayerName2.text = "Player 2 %s" % ["I".repeat(globals.player2_score)]
+		$HUD/HBoxContainer4/PlayerName2.text = "Player 2     %s" % ["I".repeat(globals.player2_score)]
 	reset()
