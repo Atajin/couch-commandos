@@ -1,10 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dakrktvn5l6dj"]
+[gd_scene load_steps=5 format=3 uid="uid://bwm48pruqomyu"]
 
 [ext_resource type="PackedScene" uid="uid://da4r6lfm4325" path="res://scenes/player.tscn" id="1_tutdv"]
-[ext_resource type="PackedScene" uid="uid://hidfb1pp12xh" path="res://scenes/bullet_pool.tscn" id="2_ie7wy"]
+[ext_resource type="PackedScene" uid="uid://4g1jq48epytr" path="res://scenes/bullet_pool.tscn" id="2_ie7wy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo6mp"]
+size = Vector2(200, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nl7yx"]
+size = Vector3(200, 20, 1)
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_tutdv")]
 
 [node name="BulletPool" parent="." instance=ExtResource("2_ie7wy")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_uo6mp")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+modulate = Color(0.0916439, 0.134951, 0, 1)
+mesh = SubResource("BoxMesh_nl7yx")
