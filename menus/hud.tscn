@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://ll8w686waxfu"]
+
+[ext_resource type="Texture2D" uid="uid://b1crusyigmk57" path="res://sprites/bullets/bullet_counter_image.png" id="1_32tqc"]
+[ext_resource type="Texture2D" uid="uid://cx2mytocwmuud" path="res://sprites/bullets/bullet_counter_image_reverse.png" id="2_64o7r"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 838.0
+offset_right = 160.0
+offset_bottom = 891.0
+
+[node name="BulletCounterSprite" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_32tqc")
+expand_mode = 2
+
+[node name="Bullet Amount" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "9/9
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1440.0
+offset_top = 837.0
+offset_right = 1551.0
+offset_bottom = 890.0
+
+[node name="Bullet Amount" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "9/9"
+
+[node name="BulletCounterSprite" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_64o7r")
+expand_mode = 2

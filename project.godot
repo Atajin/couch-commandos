@@ -11,18 +11,19 @@ config_version=5
 [application]
 
 config/name="common shooter"
-run/main_scene="res://menus/main_node.tscn"
+run/main_scene="res://menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+globals="*res://scripts/globals.gd"
 
 [display]
 
 window/size/mode=3
 window/stretch/scale=1.2
 window/vsync/vsync_mode=0
-[autoload]
-
-Globals="*res://scripts/globals.gd"
 
 [dotnet]
 

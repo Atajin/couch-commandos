@@ -1,12 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://dlkjjchywe0uu"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_e2o61"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pr66l"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(1.45, 1.45)
-script = ExtResource("1_e2o61")
+script = ExtResource("1_pr66l")
 
 [node name="Titre" type="Label" parent="."]
 layout_mode = 0
