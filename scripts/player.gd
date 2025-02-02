@@ -68,9 +68,12 @@ func get_input_vector() -> Vector2:
 func shoot() -> void:
 	var bullet = bullet_pool.get_bullet()
 	if bullet:
-		globals.player1_pistol_ammo -= 1
+		if is_player_1:
+			globals.player1_pistol_ammo -= 1
+		else:
+			globals.player2_pistol_ammo -= 1
 		bullet.reset()
-		bullet.shotByPlayerOne = is_player_1 if true else false
+		bullet.shotByPlayerOne = true if is_player_1 else false
 		bullet.global_position = barrel_tip.global_position
 		bullet.rotation = barrel_tip.global_rotation
 
