@@ -49,8 +49,6 @@ func _on_health_changed(new_value: int, is_player_one: bool) -> void:
 		$Player1.is_dead = true
 		globals.player2_score += 1
 		$HUD/HBoxContainer4/PlayerName2.text = "Player 2     %s" % ["I".repeat(globals.player2_score)]
-	print("1", globals.player1_score)
-	print("2", globals.player1_score)
 
 
 func _on_death_timer_timeout() -> void:
