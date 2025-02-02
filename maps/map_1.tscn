@@ -1,9 +1,11 @@
 [gd_scene load_steps=22 format=4 uid="uid://dbv55xpjca5ex"]
 
+[ext_resource type="Script" path="res://scripts/main_game_loop.gd" id="1_8ipfq"]
 [ext_resource type="Texture2D" uid="uid://g6uu4gkbwr5m" path="res://tiles/tilesheet_complete.png" id="1_s6bsn"]
 [ext_resource type="Texture2D" uid="uid://dtuot7lwpfodw" path="res://tiles/Tileset64x64.png" id="2_6vad3"]
 [ext_resource type="PackedScene" uid="uid://da4r6lfm4325" path="res://scenes/player.tscn" id="3_d3c3w"]
-[ext_resource type="PackedScene" path="res://scenes/bullet_pool.tscn" id="4_fh72r"]
+[ext_resource type="PackedScene" uid="uid://4g1jq48epytr" path="res://scenes/bullet_pool.tscn" id="4_fh72r"]
+[ext_resource type="PackedScene" uid="uid://ll8w686waxfu" path="res://menus/hud.tscn" id="5_nixxi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cjvo"]
 texture = ExtResource("1_s6bsn")
@@ -4414,6 +4416,8 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_8gsw1")
 
 [node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8ipfq")
 
 [node name="Water" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_ggphn")
@@ -4447,6 +4451,7 @@ tile_map_data = PackedByteArray("AAADAAkAAAASAAUAAAAEAAkAAAASAAUAAAAFAAkAAAASAAU
 tile_set = SubResource("TileSet_vma62")
 
 [node name="Player" parent="." instance=ExtResource("3_d3c3w")]
+[node name="Player1" parent="." instance=ExtResource("3_d3c3w")]
 position = Vector2(188, 126)
 
 [node name="Player2" parent="." instance=ExtResource("3_d3c3w")]
@@ -4454,3 +4459,9 @@ position = Vector2(1476, 166)
 is_player_1 = false
 
 [node name="BulletPool" parent="." instance=ExtResource("4_fh72r")]
+
+[node name="HUD" parent="." instance=ExtResource("5_nixxi")]
+
+[node name="PlayerSpawn1" type="Marker2D" parent="."]
+
+[node name="PlayerSpawn2" type="Marker2D" parent="."]
