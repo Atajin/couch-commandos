@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 600.0
+const SPEED = 800.0
 const BULLET_DAMAGE = 25
 
 var shotByPlayerOne: bool

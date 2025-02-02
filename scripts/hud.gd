@@ -15,9 +15,9 @@ func _process(delta: float) -> void:
 
 func _on_ammo_changed(new_value: int, is_player_one: bool) -> void:
 	if is_player_one:
-		$"HBoxContainer/BulletAmount".text = str(new_value) + "/9"
+		$"HBoxContainer/Control/BulletAmount".text = str(new_value) + "/9"
 	else:
-		$"HBoxContainer2/BulletAmount".text = str(new_value) + "/9"
+		$"HBoxContainer/Control2/BulletAmount".text = str(new_value) + "/9"
 
 func _on_health_changed(new_value: int, is_player_one: bool) -> void:
 	if is_player_one:

@@ -3,7 +3,7 @@ class_name Player
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 200.0
 const DEADZONE = 0.2
 
 @export var is_player_1: bool = true

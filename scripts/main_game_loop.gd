@@ -33,8 +33,8 @@ func _on_health_changed(new_value: int, is_player_one: bool) -> void:
 	if new_value != 0: return
 	if !is_player_one:
 		globals.player1_score += 1
-		$HUD/HBoxContainer4/PlayerName1.text = "Player 1 (%s points)" % [globals.player1_score]
+		$HUD/HBoxContainer4/PlayerName1.text = "Player 1 %s" % ["I".repeat(globals.player1_score)]
 	else:
 		globals.player2_score += 1
-		$HUD/HBoxContainer4/PlayerName2.text = "Player 2 (%s points)" % [globals.player2_score]
+		$HUD/HBoxContainer4/PlayerName2.text = "Player 2 %s" % ["I".repeat(globals.player2_score)]
 	reset()
