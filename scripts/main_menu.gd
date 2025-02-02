@@ -12,8 +12,11 @@ func _process(delta: float) -> void:
 
 
 func _on_button_up(button_name: String) -> void:
-	if button_name == "start":
+	if button_name == "map1":
 		get_tree().change_scene_to_file("res://maps/map_1.tscn")
+		
+	if button_name == "map2":
+		get_tree().change_scene_to_file("res://maps/map_2.tscn")
 
 	if button_name == "options":
 		print("Options opened!")
