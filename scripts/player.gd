@@ -16,6 +16,7 @@ const DEADZONE = 0.2
 @onready var reload_sound = $AudioStreamPlayer2D
 
 var is_reloading: bool = false
+var is_dead: bool = false
 
 func _ready() -> void:
 	if is_player_1:
@@ -24,31 +25,33 @@ func _ready() -> void:
 		$Pivot/PlayerSprite.sprite_frames = player2_spriteframes
 
 func _process(delta: float) -> void:
-	if is_player_1:
-		if Input.is_action_just_pressed("reload_p1"):
-			reload()
-		if Input.is_action_just_pressed("shoot_p1"):
-			shoot()
-	else:
-		if Input.is_action_just_pressed("reload_p2"):
-			reload()
-		if Input.is_action_just_pressed("shoot_p2"):
-			shoot()
+	if !is_dead:
+		if is_player_1:
+			if Input.is_action_just_pressed("reload_p1"):
+				reload()
+			if Input.is_action_just_pressed("shoot_p1"):
+				shoot()
+		else:
+			if Input.is_action_just_pressed("reload_p2"):
+				reload()
+			if Input.is_action_just_pressed("shoot_p2"):
+				shoot()
 		
 func _physics_process(delta: float) -> void:
-	var input_vector = get_input_vector()
-	
-	if input_vector.length() > 0:
-		velocity = input_vector * SPEED
-		aim_pivot.rotation = input_vector.angle()
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+	if !is_dead:
+		var input_vector = get_input_vector()
+		
+		if input_vector.length() > 0:
+			velocity = input_vector * SPEED
+			aim_pivot.rotation = input_vector.angle()
+		else:
+			velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 
-	var aim_vector = get_aim_vector()
-	if aim_vector.length() > DEADZONE:
-		aim_pivot.rotation = aim_vector.angle()
+		var aim_vector = get_aim_vector()
+		if aim_vector.length() > DEADZONE:
+			aim_pivot.rotation = aim_vector.angle()
 
-	move_and_slide()
+		move_and_slide()
 	
 	
 func get_aim_vector() -> Vector2:

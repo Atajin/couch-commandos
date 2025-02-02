@@ -36,11 +36,28 @@ func finish_game() -> void:
 
 
 func _on_health_changed(new_value: int, is_player_one: bool) -> void:
+	$RoundTimer.stop()
 	if new_value != 0: return
+	$DeathTimer.start()
 	if !is_player_one:
+		$Player2/Pivot/PlayerSprite.play("dead")
+		$Player2.is_dead = true
 		globals.player1_score += 1
 		$HUD/HBoxContainer4/PlayerName1.text = "Player 1     %s" % ["I".repeat(globals.player1_score)]
 	else:
+		$Player1/Pivot/PlayerSprite.play("dead")
+		$Player1.is_dead = true
 		globals.player2_score += 1
 		$HUD/HBoxContainer4/PlayerName2.text = "Player 2     %s" % ["I".repeat(globals.player2_score)]
+
+
+func _on_death_timer_timeout() -> void:
+	$Player1/Pivot/PlayerSprite.play("default")
+	$Player1.is_dead = false
+	$Player2/Pivot/PlayerSprite.play("default")
+	$Player2.is_dead = false
+	reset()
+
+
+func _on_round_timer_timeout() -> void:
 	reset()

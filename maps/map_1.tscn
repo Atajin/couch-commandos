@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dtuot7lwpfodw" path="res://tiles/Tileset64x64.png" id="2_6vad3"]
 [ext_resource type="PackedScene" uid="uid://da4r6lfm4325" path="res://scenes/player.tscn" id="3_d3c3w"]
 [ext_resource type="Script" path="res://scripts/breakable.gd" id="4_2o4o5"]
-[ext_resource type="PackedScene" path="res://scenes/bullet_pool.tscn" id="4_fh72r"]
+[ext_resource type="PackedScene" uid="uid://4g1jq48epytr" path="res://scenes/bullet_pool.tscn" id="4_fh72r"]
 [ext_resource type="PackedScene" uid="uid://ll8w686waxfu" path="res://menus/hud.tscn" id="5_nixxi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cjvo"]
@@ -4455,7 +4455,7 @@ tile_set = SubResource("TileSet_vma62")
 position = Vector2(188, 126)
 
 [node name="Player2" parent="." instance=ExtResource("3_d3c3w")]
-position = Vector2(1465, 169)
+position = Vector2(1476, 166)
 is_player_1 = false
 
 [node name="BulletPool" parent="." instance=ExtResource("4_fh72r")]
@@ -4471,3 +4471,10 @@ position = Vector2(1465, 169)
 [node name="RoundTimer" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
