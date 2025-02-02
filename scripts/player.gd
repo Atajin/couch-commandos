@@ -67,7 +67,6 @@ func get_input_vector() -> Vector2:
 	
 func shoot() -> void:
 	var bullet = bullet_pool.get_bullet()
-	print(bullet)
 	if bullet:
 		bullet.reset()
 		bullet.global_position = barrel_tip.global_position

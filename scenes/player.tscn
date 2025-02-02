@@ -36,4 +36,4 @@ scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_11t40")
 
 [node name="BarrelTip" type="Marker2D" parent="Pivot"]
-position = Vector2(30, 0)
+position = Vector2(25, 0)
