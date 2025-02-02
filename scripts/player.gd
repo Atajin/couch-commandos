@@ -69,6 +69,7 @@ func shoot() -> void:
 	var bullet = bullet_pool.get_bullet()
 	if bullet:
 		bullet.reset()
+		bullet.shotByPlayerOne = is_player_1 if true else false
 		bullet.global_position = barrel_tip.global_position
 		bullet.rotation = barrel_tip.global_rotation
 
