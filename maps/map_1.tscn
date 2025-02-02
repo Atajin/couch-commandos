@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=4 uid="uid://dbv55xpjca5ex"]
+[gd_scene load_steps=21 format=4 uid="uid://dbv55xpjca5ex"]
 
 [ext_resource type="Texture2D" uid="uid://g6uu4gkbwr5m" path="res://tiles/tilesheet_complete.png" id="1_s6bsn"]
 [ext_resource type="Texture2D" uid="uid://dtuot7lwpfodw" path="res://tiles/Tileset64x64.png" id="2_6vad3"]
 [ext_resource type="PackedScene" uid="uid://da4r6lfm4325" path="res://scenes/player.tscn" id="3_d3c3w"]
 [ext_resource type="PackedScene" uid="uid://4g1jq48epytr" path="res://scenes/bullet_pool.tscn" id="4_fh72r"]
+[ext_resource type="PackedScene" uid="uid://ll8w686waxfu" path="res://menus/hud.tscn" id="5_nixxi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cjvo"]
 texture = ExtResource("1_s6bsn")
@@ -3917,3 +3918,5 @@ position = Vector2(1476, 119)
 is_player_1 = false
 
 [node name="BulletPool" parent="." instance=ExtResource("4_fh72r")]
+
+[node name="HUD" parent="." instance=ExtResource("5_nixxi")]
