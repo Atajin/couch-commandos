@@ -1,6 +1,6 @@
 extends Node2D
 
-const POOL_SIZE = 20
+const POOL_SIZE = 30
 var bullets: Array[Area2D] = []
 var bullet_scene = preload("res://scenes/bullet.tscn")
 

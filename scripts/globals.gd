@@ -2,13 +2,14 @@ extends Node
 
 signal player_ammo_changed(new_value, is_player_one)
 signal player_health_changed(new_value, is_player_one)
+signal player_score_changed(new_value, is_player_one)
 
 const MAX_PLAYER_HEALTH: int = 100
 const MAX_PISTOL_AMMO: int = 9
 const MAX_ROUNDS: int = 5
 
 var hud: Node = null
-var current_round: int = 0
+var current_round: int = 1
 var player1_score: int = 0
 var player2_score: int = 0
 var player1_health: int = MAX_PLAYER_HEALTH:
