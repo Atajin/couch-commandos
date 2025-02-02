@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hiva6i5xd415"
-path="res://.godot/imported/manBlue_gun.png-ec4e152bbfa31d9b91e812d5681c65c8.ctex"
+uid="uid://dsx7ekqo7pm1h"
+path="res://.godot/imported/bullet_frame_3.png-77c45a613e7cd86e8472b9ff9fbc130c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player_1/manBlue_gun.png"
-dest_files=["res://.godot/imported/manBlue_gun.png-ec4e152bbfa31d9b91e812d5681c65c8.ctex"]
+source_file="res://sprites/bullets/bullet_frame_3.png"
+dest_files=["res://.godot/imported/bullet_frame_3.png-77c45a613e7cd86e8472b9ff9fbc130c.ctex"]
 
 [params]
 

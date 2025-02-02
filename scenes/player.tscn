@@ -1,16 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://da4r6lfm4325"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3dc5k"]
-[ext_resource type="Texture2D" uid="uid://cijfjvh1uoxg2" path="res://sprites/player_1/manBlue_stand.png" id="2_ikx1f"]
+[ext_resource type="Texture2D" uid="uid://chqs6478xh4oh" path="res://sprites/player_1/player_1.png" id="2_n33cy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o8aqc"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8vpbm"]
 radius = 20.0
+height = 50.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ag4c3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_11t40"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ikx1f")
+"texture": ExtResource("2_n33cy")
 }],
 "loop": true,
 "name": &"default",
@@ -21,10 +22,17 @@ animations = [{
 script = ExtResource("1_3dc5k")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_o8aqc")
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_8vpbm")
 
 [node name="Pivot" type="Node2D" parent="."]
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="Pivot"]
-sprite_frames = SubResource("SpriteFrames_ag4c3")
+position = Vector2(4, 1.42109e-14)
+rotation = -1.5708
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_11t40")
+
+[node name="BarrelTip" type="Marker2D" parent="Pivot"]
+position = Vector2(30, 0)
