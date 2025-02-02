@@ -11,7 +11,12 @@ size = Vector3(200, 20, 1)
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_tutdv")]
+[node name="Player1" parent="." instance=ExtResource("1_tutdv")]
+position = Vector2(50, 40)
+
+[node name="Player2" parent="." instance=ExtResource("1_tutdv")]
+position = Vector2(1075, 491)
+is_player_1 = false
 
 [node name="BulletPool" parent="." instance=ExtResource("2_ie7wy")]
 

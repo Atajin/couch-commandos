@@ -13,6 +13,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	print(body)
+	print(body is Player)
 	hide()
 	set_physics_process(false)
 	$AnimatedSprite2D.stop()

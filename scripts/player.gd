@@ -1,3 +1,5 @@
+class_name Player
+
 extends CharacterBody2D
 
 
@@ -11,9 +13,14 @@ const DEADZONE = 0.2
 @onready var bullet_pool = $"../BulletPool"
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("shoot_p1"):
-		shoot()
-
+	if is_player_1:
+		if Input.is_action_just_pressed("shoot_p1"):
+			shoot()
+	else:
+		if Input.is_action_just_pressed("shoot_p2"):
+			shoot()
+		
+		
 func _physics_process(delta: float) -> void:
 	var input_vector = get_input_vector()
 	
