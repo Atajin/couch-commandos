@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var player = body as Player
-		if player.is_player_1 != shotByPlayerOne:
+		if player.is_player_1 != shotByPlayerOne and !player.is_dead:
 			player.gotHit(BULLET_DAMAGE)
 	elif body.name == "Breakable":
 		var tilemap_layer = body as TileMapLayer
