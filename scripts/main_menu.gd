@@ -21,7 +21,7 @@ func _on_button_up(button_name: String) -> void:
 		get_tree().change_scene_to_file(str(globals.current_map))
 
 	if button_name == "options":
-		print("Options opened!")
+		pass
 
 	if button_name == "quit":
 		get_tree().quit()

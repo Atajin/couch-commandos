@@ -35,7 +35,6 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("shoot_p2"):
 			shoot()
 		
-		
 func _physics_process(delta: float) -> void:
 	var input_vector = get_input_vector()
 	
@@ -115,3 +114,4 @@ func _on_reload_timer_timeout() -> void:
 		globals.player1_pistol_ammo = globals.MAX_PISTOL_AMMO
 	else:
 		globals.player2_pistol_ammo = globals.MAX_PISTOL_AMMO
+		

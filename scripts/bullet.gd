@@ -26,9 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 			var hit_pos = global_position
 			var cell_pos = tilemap_layer.local_to_map(hit_pos)
 			tilemap_layer.erase_cell(cell_pos)
-			
-	else:
-		print(body)
+
 	hide()
 	set_deferred("monitoring", false)
 	set_physics_process(false)
