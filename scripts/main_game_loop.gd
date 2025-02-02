@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func reset() -> void:
-	pass
+	$Breakable.respawn_breakables()
 
 
 func _on_health_changed(new_value: int, is_player_one: bool) -> void:
@@ -22,3 +22,4 @@ func _on_health_changed(new_value: int, is_player_one: bool) -> void:
 		globals.player1_score += 1
 	else:
 		globals.player2_score += 1
+	reset()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=4 uid="uid://dbv55xpjca5ex"]
+[gd_scene load_steps=25 format=4 uid="uid://dbv55xpjca5ex"]
 
 [ext_resource type="Script" path="res://scripts/main_game_loop.gd" id="1_8ipfq"]
 [ext_resource type="Texture2D" uid="uid://g6uu4gkbwr5m" path="res://tiles/tilesheet_complete.png" id="1_s6bsn"]
 [ext_resource type="Texture2D" uid="uid://dtuot7lwpfodw" path="res://tiles/Tileset64x64.png" id="2_6vad3"]
 [ext_resource type="PackedScene" uid="uid://da4r6lfm4325" path="res://scenes/player.tscn" id="3_d3c3w"]
+[ext_resource type="Script" path="res://scripts/breakable.gd" id="4_2o4o5"]
 [ext_resource type="PackedScene" uid="uid://4g1jq48epytr" path="res://scenes/bullet_pool.tscn" id="4_fh72r"]
 [ext_resource type="PackedScene" uid="uid://ll8w686waxfu" path="res://menus/hud.tscn" id="5_nixxi"]
 
@@ -4433,6 +4434,7 @@ tile_set = SubResource("TileSet_v1qpg")
 [node name="Breakable" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAIAAIAAQAUAAQAAAAKAAoAAQAUAAUAADAPAAYAAQAVAAUAAAAUAAkAAQAUAAUAAAAVAAkAAQAVAAUAAAARAAMAAQAVAAQAAAARAAIAAQAUAAQAAAASAAIAAQAVAAUAAAASAAgAAQAUAAQAADAMAAgAAQAVAAQAAGAHAAwAAQAUAAUAAAAMAAwAAQAUAAQAAFAPAAsAAQAVAAUAAAAQAAsAAQAUAAUAAFATAAwAAQAUAAQAAAAUAAwAAQAVAAUAAAALAAwAAQAVAAUAAAAHAAIAAQAVAAQAAAATAAIAAQAUAAQAAGAJAAYAAQAUAAQAAAALAAIAAQAVAAQAAGANAAQAAQAVAAUAAAACAAUAAQAVAAUAAAACAAgAAQAVAAQAAAAFAAYAAQAUAAQAAGAGAAUAAQAVAAUAAAAGAAYAAQAVAAQAAAAIAAkAAQAVAAUAAFAIAAgAAQAUAAQAAAATAAUAAQAVAAUAAGACAAwAAQAUAAUAADACAAsAAQAVAAUAAAADAAwAAQAVAAQAAAA=")
 tile_set = SubResource("TileSet_xnnek")
+script = ExtResource("4_2o4o5")
 
 [node name="Walkable props" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_vm7l7")

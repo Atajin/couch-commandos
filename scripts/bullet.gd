@@ -20,8 +20,13 @@ func _on_body_entered(body: Node2D) -> void:
 		var player = body as Player
 		if player.is_player_1 != shotByPlayerOne:
 			player.gotHit(BULLET_DAMAGE)
-	else if body is TileMap and body.get_collision_layer() & collision_mask:
-		print("Hit tile layer:", body.get_collision_layer())
+	elif body.name == "Breakable":
+		var tilemap_layer = body as TileMapLayer
+		if tilemap_layer:
+			var hit_pos = global_position
+			var cell_pos = tilemap_layer.local_to_map(hit_pos)
+			tilemap_layer.erase_cell(cell_pos)
+			
 	else:
 		print(body)
 	hide()
