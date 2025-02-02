@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfe04j2s6qkgj"]
+
+[ext_resource type="Script" path="res://scripts/controls.gd" id="1_ayor3"]
+[ext_resource type="FontFile" uid="uid://ckfd322enrcy6" path="res://fonts/BlackOpsOne-Regular.ttf" id="2_68gyh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.45, 1.45)
+script = ExtResource("1_ayor3")
+
+[node name="Controls" type="Label" parent="."]
+layout_mode = 2
+offset_left = 387.5
+offset_top = 50.0
+offset_right = 737.5
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("2_68gyh")
+theme_override_font_sizes/font_size = 60
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 200.0
+offset_top = 125.0
+offset_right = 550.0
+offset_bottom = 470.0
+alignment = 1
+
+[node name="Player1" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Player 1
+
+Keyboard
+Movement: WASD
+Shooting: Spacebar
+Reload: R
+
+Controller
+Movement: Left Joystick
+Aiming: Right Joystick
+Shooting: R2
+Reload: Square
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 575.0
+offset_top = 125.0
+offset_right = 925.0
+offset_bottom = 440.0
+alignment = 1
+
+[node name="Player2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Player 2
+
+Keyboard
+Movement: Arrow Keys
+Shooting: Keypad Enter
+Reload: Keypad Period
+
+Controller
+Movement: Left Joystick
+Aiming: Right Joystick
+Shooting: R2
+Reload: Square
+"
+horizontal_alignment = 1
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 2
+offset_left = 225.0
+offset_top = 480.0
+offset_right = 900.0
+offset_bottom = 580.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_68gyh")
+theme_override_font_sizes/font_size = 60
+text = "Return to menu"
+
+[connection signal="button_up" from="Menu" to="." method="_on_button_up" binds= ["menu"]]

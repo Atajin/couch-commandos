@@ -42,12 +42,12 @@ theme_override_fonts/font = ExtResource("2_2p17y")
 theme_override_font_sizes/font_size = 60
 text = "Play map 2"
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Controls" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_2p17y")
 theme_override_font_sizes/font_size = 60
-text = "Options"
+text = "Controls"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -58,5 +58,5 @@ text = "Quit"
 
 [connection signal="button_up" from="VBoxContainer/StartGame" to="." method="_on_button_up" binds= ["map1"]]
 [connection signal="button_up" from="VBoxContainer/StartGame2" to="." method="_on_button_up" binds= ["map2"]]
-[connection signal="button_up" from="VBoxContainer/Options" to="." method="_on_button_up" binds= ["options"]]
+[connection signal="button_up" from="VBoxContainer/Controls" to="." method="_on_button_up" binds= ["controls"]]
 [connection signal="button_up" from="VBoxContainer/Quit" to="." method="_on_button_up" binds= ["quit"]]
