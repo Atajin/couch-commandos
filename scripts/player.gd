@@ -94,6 +94,7 @@ func shoot() -> void:
 		bullet.shotByPlayerOne = true if is_player_1 else false
 		bullet.global_position = barrel_tip.global_position
 		bullet.rotation = barrel_tip.global_rotation
+		audio_manager.play_gunshot()
 
 
 func reload() -> void:

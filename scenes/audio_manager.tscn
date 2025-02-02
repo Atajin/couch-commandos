@@ -1,0 +1,12 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs0cxuxrrgcmx"]
+
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_0illc"]
+[ext_resource type="AudioStream" uid="uid://6t8h27smm85p" path="res://sfx/gunshot1.wav" id="2_h3irr"]
+[ext_resource type="AudioStream" uid="uid://cubsntttd4a6b" path="res://sfx/gunshot2.wav" id="3_58kgp"]
+[ext_resource type="AudioStream" uid="uid://dyqpmewwtpqdi" path="res://sfx/gunshot3.wav" id="4_akmou"]
+[ext_resource type="AudioStream" uid="uid://bq78hrx4dur12" path="res://sfx/gunshot4.wav" id="5_8ln7j"]
+[ext_resource type="AudioStream" uid="uid://d1mw85w063lvr" path="res://sfx/gunshot5.wav" id="6_mcoix"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_0illc")
+gunshot_sounds = Array[AudioStream]([ExtResource("2_h3irr"), ExtResource("3_58kgp"), ExtResource("4_akmou"), ExtResource("5_8ln7j"), ExtResource("6_mcoix"), ExtResource("2_h3irr"), ExtResource("3_58kgp"), ExtResource("4_akmou"), ExtResource("5_8ln7j"), ExtResource("6_mcoix")])
