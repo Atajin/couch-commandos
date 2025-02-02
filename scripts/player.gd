@@ -44,7 +44,32 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 
+	var aim_vector = get_aim_vector()
+	if aim_vector.length() > DEADZONE:
+		aim_pivot.rotation = aim_vector.angle()
+
 	move_and_slide()
+	
+	
+func get_aim_vector() -> Vector2:
+	if is_player_1:
+		if Input.get_connected_joypads().size() > 0:
+			var controller_aim = Vector2(
+				Input.get_joy_axis(0, JOY_AXIS_RIGHT_X),
+				Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
+			)
+			if controller_aim.length() > DEADZONE:
+				return controller_aim.normalized()
+	else:
+		if Input.get_connected_joypads().size() > 1:
+			var controller_aim = Vector2(
+				Input.get_joy_axis(1, JOY_AXIS_RIGHT_X),
+				Input.get_joy_axis(1, JOY_AXIS_LEFT_Y)
+			)
+			if controller_aim.length() > DEADZONE:
+				return controller_aim.normalized()
+				
+	return Vector2.ZERO
 
 func get_input_vector() -> Vector2:
 	if is_player_1:
@@ -52,15 +77,18 @@ func get_input_vector() -> Vector2:
 			Input.get_axis("move_left_p1", "move_right_p1"),
 			Input.get_axis("move_up_p1", "move_down_p1")
 		)
+		
 		if keyboard_input.length() > 0:
 			return keyboard_input.normalized()
 			
-		var controller_input = Vector2(
-			Input.get_joy_axis(0, JOY_AXIS_LEFT_X),
-			Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
-		)
-		if controller_input.length() > DEADZONE:
-			return controller_input.normalized()
+		# Only check controller 0 for player 1
+		if Input.get_connected_joypads().size() > 0:
+			var controller_input = Vector2(
+				Input.get_joy_axis(0, JOY_AXIS_LEFT_X),
+				Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
+			)
+			if controller_input.length() > DEADZONE:
+				return controller_input.normalized()
 	else:
 		var keyboard_input = Vector2(
 			Input.get_axis("ui_left", "ui_right"),
@@ -69,15 +97,15 @@ func get_input_vector() -> Vector2:
 		if keyboard_input.length() > 0:
 			return keyboard_input.normalized()
 			
-		var controller_input = Vector2(
-			Input.get_joy_axis(1, JOY_AXIS_LEFT_X),
-			Input.get_joy_axis(1, JOY_AXIS_LEFT_Y)
-		)
-		if controller_input.length() > DEADZONE:
-			return controller_input.normalized()
-	
+			
+		if Input.get_connected_joypads().size() > 1:
+			var controller_input = Vector2(
+				Input.get_joy_axis(1, JOY_AXIS_LEFT_X),
+				Input.get_joy_axis(1, JOY_AXIS_LEFT_Y)
+			)
+			if controller_input.length() > DEADZONE:
+				return controller_input.normalized()
 	return Vector2.ZERO
-	
 	
 func shoot() -> void:
 	if is_reloading: return
@@ -93,10 +121,12 @@ func shoot() -> void:
 		bullet.shotByPlayerOne = true if is_player_1 else false
 		bullet.global_position = barrel_tip.global_position
 		bullet.rotation = barrel_tip.global_rotation
+		audio_manager.play_gunshot()
 
 
 func reload() -> void:
 	reload_sound.play()
+	$Pivot/PlayerSprite.play("reload")
 	is_reloading = true
 	$ReloadTimer.start()
 
@@ -109,6 +139,7 @@ func gotHit(damage) -> void:
 
 
 func _on_reload_timer_timeout() -> void:
+	$Pivot/PlayerSprite.play("default")
 	is_reloading = false
 	if is_player_1:
 		globals.player1_pistol_ammo = globals.MAX_PISTOL_AMMO
