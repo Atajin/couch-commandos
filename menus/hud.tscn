@@ -108,7 +108,7 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_uvr0m")
 theme_override_font_sizes/font_size = 24
-text = "Round"
+text = "Round 1"
 
 [node name="Control" type="Control" parent="HBoxContainer3"]
 custom_minimum_size = Vector2(30, 0)

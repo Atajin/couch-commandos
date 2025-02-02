@@ -3,7 +3,7 @@ class_name Player
 extends CharacterBody2D
 
 
-const SPEED = 200.0
+const SPEED = 300.0
 const DEADZONE = 0.2
 
 @export var player1_spriteframes: SpriteFrames
@@ -13,6 +13,7 @@ const DEADZONE = 0.2
 @onready var aim_pivot = $Pivot
 @onready var barrel_tip = $Pivot/BarrelTip
 @onready var bullet_pool = $"../BulletPool"
+@onready var reload_sound = $AudioStreamPlayer2D
 
 var is_reloading: bool = false
 
@@ -96,6 +97,7 @@ func shoot() -> void:
 
 
 func reload() -> void:
+	reload_sound.play()
 	is_reloading = true
 	$ReloadTimer.start()
 

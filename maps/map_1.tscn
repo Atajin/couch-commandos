@@ -4467,3 +4467,7 @@ position = Vector2(183, 129)
 position = Vector2(1465, 169)
 
 [node name="HUD" parent="." instance=ExtResource("5_nixxi")]
+
+[node name="RoundTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true

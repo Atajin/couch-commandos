@@ -8,10 +8,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if $RoundTimer.is_stopped() == false:
+		$HUD/HBoxContainer3/Timer.text = "%d seconds" % [$RoundTimer.time_left]
 
 
 func reset() -> void:
+	$RoundTimer.stop()
 	globals.current_round += 1
 	if globals.current_round > globals.MAX_ROUNDS:
 		finish_game()
@@ -24,6 +26,7 @@ func reset() -> void:
 		globals.player2_health = globals.MAX_PLAYER_HEALTH
 		globals.player1_pistol_ammo = globals.MAX_PISTOL_AMMO
 		globals.player2_pistol_ammo = globals.MAX_PISTOL_AMMO
+		$RoundTimer.start()
 
 func finish_game() -> void:
 	pass
