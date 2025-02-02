@@ -128,10 +128,11 @@ func shoot() -> void:
 
 
 func reload() -> void:
-	reload_sound.play()
-	$Pivot/PlayerSprite.play("reload")
-	is_reloading = true
-	$ReloadTimer.start()
+	if !is_reloading:
+		reload_sound.play()
+		$Pivot/PlayerSprite.play("reload")
+		is_reloading = true
+		$ReloadTimer.start()
 
 
 func gotHit(damage) -> void:
