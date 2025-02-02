@@ -12,11 +12,17 @@ const DEADZONE = 0.2
 @onready var barrel_tip = $Pivot/BarrelTip
 @onready var bullet_pool = $"../BulletPool"
 
+var is_reloading: bool = false
+
 func _process(delta: float) -> void:
 	if is_player_1:
+		if Input.is_action_just_pressed("reload_p1"):
+			reload()
 		if Input.is_action_just_pressed("shoot_p1"):
 			shoot()
 	else:
+		if Input.is_action_just_pressed("reload_p2"):
+			reload()
 		if Input.is_action_just_pressed("shoot_p2"):
 			shoot()
 		
@@ -66,19 +72,36 @@ func get_input_vector() -> Vector2:
 	
 	
 func shoot() -> void:
+	if is_reloading: return
+	if is_player_1:
+		if globals.player1_pistol_ammo  == 0: return
+		globals.player1_pistol_ammo -= 1
+	else:
+		if globals.player2_pistol_ammo == 0: return
+		globals.player2_pistol_ammo -= 1
 	var bullet = bullet_pool.get_bullet()
 	if bullet:
-		if is_player_1:
-			globals.player1_pistol_ammo -= 1
-		else:
-			globals.player2_pistol_ammo -= 1
 		bullet.reset()
 		bullet.shotByPlayerOne = true if is_player_1 else false
 		bullet.global_position = barrel_tip.global_position
 		bullet.rotation = barrel_tip.global_rotation
+
+
+func reload() -> void:
+	is_reloading = true
+	$ReloadTimer.start()
+
 
 func gotHit(damage) -> void:
 	if is_player_1:
 		globals.player1_health = max(0, globals.player1_health - damage)
 	else:
 		globals.player2_health = max(0, globals.player2_health - damage)
+
+
+func _on_reload_timer_timeout() -> void:
+	is_reloading = false
+	if is_player_1:
+		globals.player1_pistol_ammo = globals.MAX_PISTOL_AMMO
+	else:
+		globals.player2_pistol_ammo = globals.MAX_PISTOL_AMMO
