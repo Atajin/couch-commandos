@@ -20,8 +20,8 @@ func _on_button_up(button_name: String) -> void:
 		globals.current_map = "res://maps/map_2.tscn"
 		get_tree().change_scene_to_file(str(globals.current_map))
 
-	if button_name == "options":
-		pass
+	if button_name == "controls":
+		get_tree().change_scene_to_file("res://menus/controls.tscn")
 
 	if button_name == "quit":
 		get_tree().quit()
