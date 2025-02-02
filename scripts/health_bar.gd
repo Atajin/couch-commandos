@@ -11,17 +11,13 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_bbc(10)
+	damage(10)
 	print(health_bar)
 	value = health_bar
 	
-	if health_bar == 0:
-		get_tree().change_scene_to_file("res://Main_Node.tscn")
-		
 	
-	
-func _bbc(dmg : int):#fonction pour les dmg
+func damage(dmg : int): #fonction pour les dmg
 	
 	health_bar -= dmg
-	health_bar = clamp(health_bar,0,max_health)
+	health_bar = clamp(health_bar, 0, max_health)
 	

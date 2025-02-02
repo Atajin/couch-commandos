@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwtqp7otiljq4"]
 
-[ext_resource type="Script" path="res://health_bar.gd" id="1_5yr8h"]
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="1_pj12e"]
 
 [node name="UiHealth" type="Control"]
 layout_mode = 3
@@ -18,4 +18,4 @@ offset_right = 62.0
 offset_bottom = 27.0
 step = 1.0
 value = 100.0
-script = ExtResource("1_5yr8h")
+script = ExtResource("1_pj12e")

@@ -10,12 +10,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_start_game_button_down():
-	get_tree().change_scene_to_file("res://ui_health.tscn")
 
-func _on_option_button_down():
-	print("options opened")
+func _on_button_up(button_name: String) -> void:
+	if button_name == "start":
+		get_tree().change_scene_to_file("res://maps/map_1.tscn")
 
+	if button_name == "options":
+		print("Options opened!")
 
-func _on_quit_button_down():
-	get_tree().quit()
+	if button_name == "quit":
+		get_tree().quit()
