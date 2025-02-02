@@ -1,11 +1,8 @@
 extends Node
 
+const MAX_PISTOL_AMMO: int = 9
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var player1_health: int = 100
+var player2_health: int = 100
+var player1_pistol_ammo: int = MAX_PISTOL_AMMO
+var player2_pistol_ammo: int = MAX_PISTOL_AMMO

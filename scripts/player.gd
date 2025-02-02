@@ -72,3 +72,9 @@ func shoot() -> void:
 		bullet.reset()
 		bullet.global_position = barrel_tip.global_position
 		bullet.rotation = barrel_tip.global_rotation
+
+func gotHit(damage) -> void:
+	if is_player_1:
+		globals.player1_health = max(0, globals.player1_health - damage)
+	else:
+		globals.player2_health = max(0, globals.player2_health - damage)
