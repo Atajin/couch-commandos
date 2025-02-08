@@ -12,8 +12,8 @@ func _ready() -> void:
 		$Winner2.visible = false
 		$Draw.visible = true
 	else:
-		$Winner1.visible = true
-		$Winner2.visible = false
+		$Winner1.visible = false
+		$Winner2.visible = true
 		$Draw.visible = false
 	$VBoxContainer/Round.text = "Rounds won: " + str(globals.player1_score)
 	$VBoxContainer2/Round.text = "Rounds won: " + str(globals.player2_score)
