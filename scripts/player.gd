@@ -115,9 +115,11 @@ func shoot() -> void:
 	if is_player_1:
 		if globals.player1_pistol_ammo  == 0: return
 		globals.player1_pistol_ammo -= 1
+		globals.player1_shots_fired += 1
 	else:
 		if globals.player2_pistol_ammo == 0: return
 		globals.player2_pistol_ammo -= 1
+		globals.player2_shots_fired += 1
 	var bullet = bullet_pool.get_bullet()
 	if bullet:
 		bullet.reset()

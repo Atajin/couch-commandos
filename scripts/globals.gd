@@ -13,6 +13,8 @@ var current_map: String = ""
 var current_round: int = 1
 var player1_score: int = 0
 var player2_score: int = 0
+var player1_shots_fired: int = 0
+var player2_shots_fired: int = 0
 var player1_health: int = MAX_PLAYER_HEALTH:
 	set(value):
 		player1_health = value
